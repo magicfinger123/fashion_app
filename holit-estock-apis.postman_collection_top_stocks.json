@@ -1,0 +1,2012 @@
+{
+	"info": {
+		"_postman_id": "89097e85-3a98-4703-989c-17d91dd66033",
+		"name": "holit-estock-apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1764269"
+	},
+	"item": [
+		{
+			"name": "investment",
+			"item": [
+				{
+					"name": "finance",
+					"item": [
+						{
+							"name": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/financial/profile/E2F23356FEE04A17A4CA20E212536A06",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"investment_priority\": \"AVOID_LOSSES\",\n        \"investment_horizon\": \"SHORT_TERM\",\n        \"downturn_reaction\": \"BUY\"\n}"
+								},
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/financial/profile/E2F23356FEE04A17A4CA20E212536A06",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"financial",
+										"profile",
+										"E2F23356FEE04A17A4CA20E212536A06"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/financial/risk-assessment/E2F23356FEE04A17A4CA20E212536A06",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/financial/risk-assessment/E2F23356FEE04A17A4CA20E212536A06",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"financial",
+										"risk-assessment",
+										"E2F23356FEE04A17A4CA20E212536A06"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "account",
+					"item": [
+						{
+							"name": "Check the risk analysis",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/accounts/risk-analysis/3",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"accounts",
+										"risk-analysis",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check Investment Forecast",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"risk_score\": 2,\n    \"num_years\": 5,\n    \"initial_contribution\": {\n        \"amount\": 200,\n        \"currency\": \"USD\"\n    },\n    \"recurring_contribution\": {\n        \"monetary_value\": {\n            \"amount\": 150,\n        \"currency\": \"USD\"\n        },\n        \"schedule\": [\"0 0 * * *\"]\n    }\n}"
+								},
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/accounts/forecast/investment",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"accounts",
+										"forecast",
+										"investment"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List of Account Types",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/accounts/all/type",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"accounts",
+										"all",
+										"type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List of Sub Account Types",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/accounts/all/sub-type",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"accounts",
+										"all",
+										"sub-type"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create new Account and Default Sub Account for User",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"account_type\": \"INDIVIDUAL\",\n    \"preferences\": {\n        \"risk_score\": 4,\n        \"enable_dynamic_risk\": true\n    }\n}"
+								},
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/accounts/E2F23356FEE04A17A4CA20E212536A06",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"accounts",
+										"E2F23356FEE04A17A4CA20E212536A06"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add new Sub Account to a User Investment Account (DON'T RUN THIS)",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"CUSTOM_INDEXING\",\n    \"preferences\": {\n        \"risk_score\": 2,\n        \"enable_dynamic_risk\": false\n    }\n}"
+								},
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/accounts/sub-accounts/E2F23356FEE04A17A4CA20E212536A06",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"accounts",
+										"sub-accounts",
+										"E2F23356FEE04A17A4CA20E212536A06"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Sub Accounts attached to Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/accounts/sub-accounts/all/E2F23356FEE04A17A4CA20E212536A06",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"accounts",
+										"sub-accounts",
+										"all",
+										"E2F23356FEE04A17A4CA20E212536A06"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get the default Sub Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/accounts/sub-accounts/E2F23356FEE04A17A4CA20E212536A06",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"accounts",
+										"sub-accounts",
+										"E2F23356FEE04A17A4CA20E212536A06"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get the Accounts' Details",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/accounts/E2F23356FEE04A17A4CA20E212536A06",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"accounts",
+										"E2F23356FEE04A17A4CA20E212536A06"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update preferences on a Sub Account",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"preferences\": {\n        \"risk_score\": 2,\n        \"enable_dynamic_risk\": false\n    }\n}"
+								},
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/accounts/sub-accounts/preferences/bc9e504d-61d2-4592-9867-f6d49ac07eb8",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"accounts",
+										"sub-accounts",
+										"preferences",
+										"bc9e504d-61d2-4592-9867-f6d49ac07eb8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a Sub Account by Adding Plans to it",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"parameters\": {\n        \"monetary_value\": {\n            \"amount\": 1000,\n            \"currency\": \"USD\"\n        },\n        \"schedule\": [\"0 0 * * *\"]\n    }\n}"
+								},
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/accounts/sub-accounts/plan/E2F23356FEE04A17A4CA20E212536A06",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"accounts",
+										"sub-accounts",
+										"plan",
+										"E2F23356FEE04A17A4CA20E212536A06"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "employment",
+					"item": [
+						{
+							"name": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/user/user-employment/DAAF4A6FCF1A4CEC973F258635E731F5",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employmentStatus\":\"EMPLOYED\",\n    \"employerName\":\"JessicaMatthew\",\n    \"street\":\"14 Egunje\",\n    \"additional\":\"None\",\n    \"city\":\"Lawason\",\n    \"region\":\"Nigeria\",\n    \"postalCode\":\"10001\"\n}"
+								},
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/user/user-employment/2B49970706E2418BAAA2B51CB67A79AE",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"user",
+										"user-employment",
+										"2B49970706E2418BAAA2B51CB67A79AE"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "Instantiate Investment User",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/user/instantiate-user/56B86FB0145649D79126FAA1BA63CBD5",
+									"protocol": "http",
+									"host": [
+										"holitapigateway-env",
+										"eba-xth9feqh",
+										"eu-west-1",
+										"elasticbeanstalk",
+										"com"
+									],
+									"path": [
+										"api",
+										"investment",
+										"v1",
+										"user",
+										"instantiate-user",
+										"56B86FB0145649D79126FAA1BA63CBD5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user-agreement",
+			"item": [
+				{
+					"name": "Update User Agreement Signed",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/user/profile/account-status/00D89F72215B4CAF81001F2E9AF17B5E",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"investment",
+								"v1",
+								"user",
+								"profile",
+								"account-status",
+								"00D89F72215B4CAF81001F2E9AF17B5E"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Agreement confirmation",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/investment/v1/user/profile/confirmation/00D89F72215B4CAF81001F2E9AF17B5E",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"investment",
+								"v1",
+								"user",
+								"profile",
+								"confirmation",
+								"00D89F72215B4CAF81001F2E9AF17B5E"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "stock",
+			"item": [
+				{
+					"name": "watch-list",
+					"item": [
+						{
+							"name": "group",
+							"item": [
+								{
+									"name": "Add Group Watch List",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Diamond Club\",\n    \"description\": \"Elite Group\",\n    \"logo\": \"\",\n    \"admin\": true,\n    \"member\": {\n        \"memberDetails\": {\n            \"name\": \"John Musa\",\n            \"logoUrl\": \"\",\n            \"description\": \"CEO and Innovator Large life\"\n        }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/group/413C90928C244E20BB288C4CAAFB598F",
+											"protocol": "http",
+											"host": [
+												"holitapigateway-env",
+												"eba-xth9feqh",
+												"eu-west-1",
+												"elasticbeanstalk",
+												"com"
+											],
+											"path": [
+												"api",
+												"stocks",
+												"v1",
+												"stock",
+												"watch-lists",
+												"group",
+												"413C90928C244E20BB288C4CAAFB598F"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Modify Group Watch List Info",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Jade Club\",\n    \"description\": \"Elite Group\",\n    \"logo\": \"\",\n    \"admin\": true,\n    \"member\": {\n        \"memberDetails\": {\n            \"name\": \"John Musa\",\n            \"logoUrl\": \"\",\n            \"description\": \"CEO and Innovator Large life\"\n        }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/group/413C90928C244E20BB288C4CAAFB598F/Diamond Club",
+											"protocol": "http",
+											"host": [
+												"holitapigateway-env",
+												"eba-xth9feqh",
+												"eu-west-1",
+												"elasticbeanstalk",
+												"com"
+											],
+											"path": [
+												"api",
+												"stocks",
+												"v1",
+												"stock",
+												"watch-lists",
+												"group",
+												"413C90928C244E20BB288C4CAAFB598F",
+												"Diamond Club"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get All Group Items for User",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/group/413C90928C244E20BB288C4CAAFB598F",
+											"protocol": "http",
+											"host": [
+												"holitapigateway-env",
+												"eba-xth9feqh",
+												"eu-west-1",
+												"elasticbeanstalk",
+												"com"
+											],
+											"path": [
+												"api",
+												"stocks",
+												"v1",
+												"stock",
+												"watch-lists",
+												"group",
+												"413C90928C244E20BB288C4CAAFB598F"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Group Info By Name",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/group/name/Jade Club",
+											"protocol": "http",
+											"host": [
+												"holitapigateway-env",
+												"eba-xth9feqh",
+												"eu-west-1",
+												"elasticbeanstalk",
+												"com"
+											],
+											"path": [
+												"api",
+												"stocks",
+												"v1",
+												"stock",
+												"watch-lists",
+												"group",
+												"name",
+												"Jade Club"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Remove Group ",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/group/413C90928C244E20BB288C4CAAFB598F/Diamond Club",
+											"protocol": "http",
+											"host": [
+												"holitapigateway-env",
+												"eba-xth9feqh",
+												"eu-west-1",
+												"elasticbeanstalk",
+												"com"
+											],
+											"path": [
+												"api",
+												"stocks",
+												"v1",
+												"stock",
+												"watch-lists",
+												"group",
+												"413C90928C244E20BB288C4CAAFB598F",
+												"Diamond Club"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "member",
+							"item": [
+								{
+									"name": "Get All Group Members",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/group/member/Jade Club",
+											"protocol": "http",
+											"host": [
+												"holitapigateway-env",
+												"eba-xth9feqh",
+												"eu-west-1",
+												"elasticbeanstalk",
+												"com"
+											],
+											"path": [
+												"api",
+												"stocks",
+												"v1",
+												"stock",
+												"watch-lists",
+												"group",
+												"member",
+												"Jade Club"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get One Member",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/group/member/413C90928C244E20BB288C4CAAFB598F/Jade Club",
+											"protocol": "http",
+											"host": [
+												"holitapigateway-env",
+												"eba-xth9feqh",
+												"eu-west-1",
+												"elasticbeanstalk",
+												"com"
+											],
+											"path": [
+												"api",
+												"stocks",
+												"v1",
+												"stock",
+												"watch-lists",
+												"group",
+												"member",
+												"413C90928C244E20BB288C4CAAFB598F",
+												"Jade Club"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add Member to Group",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"memberId\": \"LKJHGFDSA1234567890\",\n    \"admin\": false,\n    \"memberDetails\": {\n        \"name\": \"UCHE NNENACHOR\",\n        \"logoUrl\": \"\",\n        \"description\": \"Senior man at Everton\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/group/member/Jade Club",
+											"protocol": "http",
+											"host": [
+												"holitapigateway-env",
+												"eba-xth9feqh",
+												"eu-west-1",
+												"elasticbeanstalk",
+												"com"
+											],
+											"path": [
+												"api",
+												"stocks",
+												"v1",
+												"stock",
+												"watch-lists",
+												"group",
+												"member",
+												"Jade Club"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Toggle Member Admin Status",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/group/member/toggle/Jade Club/413C90928C244E20BB288C4CAAFB598F",
+											"protocol": "http",
+											"host": [
+												"holitapigateway-env",
+												"eba-xth9feqh",
+												"eu-west-1",
+												"elasticbeanstalk",
+												"com"
+											],
+											"path": [
+												"api",
+												"stocks",
+												"v1",
+												"stock",
+												"watch-lists",
+												"group",
+												"member",
+												"toggle",
+												"Jade Club",
+												"413C90928C244E20BB288C4CAAFB598F"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Remove Member from Group",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/group/member/ABC098765432WERTYOOP/Jade Club",
+											"protocol": "http",
+											"host": [
+												"holitapigateway-env",
+												"eba-xth9feqh",
+												"eu-west-1",
+												"elasticbeanstalk",
+												"com"
+											],
+											"path": [
+												"api",
+												"stocks",
+												"v1",
+												"stock",
+												"watch-lists",
+												"group",
+												"member",
+												"ABC098765432WERTYOOP",
+												"Jade Club"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "stock",
+							"item": [
+								{
+									"name": "Add Stock to Group",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"symbol\": \"ABBV\",\n    \"addedBy\": \"413C90928C244E20BB288C4CAAFB598F\",\n    \"stockOption\": {\n        \"name\": \"Abbrevaite Inc.\",\n        \"symbol\": \"ABBV\",\n        \"financials\": {\n                    \"debt\": 66728000000,\n                    \"shares\": 1478821109,\n                    \"report_date\": \"2019-12-31\",\n                    \"net_income\": 2801000000,\n                    \"marketcap\": 139349313101,\n                    \"dividend_yield\": 0.05,\n                    \"price_to_earnings_ratio\": 17.779,\n                    \"earnings_per_diluted_share\": 1.87,\n                    \"ebitda_margin\": 0.46\n                },\n                \"previous_trading_statistics\": {\n                    \"high\": 147.85,\n                    \"low\": 144.41,\n                    \"close\": 147.75,\n                    \"volume\": 5628869,\n                    \"as_of_timestamp\": \"2023-01-31T21:00:00\"\n                },\n                \"current_trading_statistics\": {\n                    \"high\": 147.05,\n                    \"low\": 145.25,\n                    \"close\": 146.17,\n                    \"volume\": 2484166,\n                    \"as_of_timestamp\": \"1970-01-01T00:00:00\"\n                }\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/group/stock/Jade Club",
+											"protocol": "http",
+											"host": [
+												"holitapigateway-env",
+												"eba-xth9feqh",
+												"eu-west-1",
+												"elasticbeanstalk",
+												"com"
+											],
+											"path": [
+												"api",
+												"stocks",
+												"v1",
+												"stock",
+												"watch-lists",
+												"group",
+												"stock",
+												"Jade Club"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Stocks for Group by Name",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/group/stock/Jade Club",
+											"protocol": "http",
+											"host": [
+												"holitapigateway-env",
+												"eba-xth9feqh",
+												"eu-west-1",
+												"elasticbeanstalk",
+												"com"
+											],
+											"path": [
+												"api",
+												"stocks",
+												"v1",
+												"stock",
+												"watch-lists",
+												"group",
+												"stock",
+												"Jade Club"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Stock from Group",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/group/stock/Jade Club/ABBV",
+											"protocol": "http",
+											"host": [
+												"holitapigateway-env",
+												"eba-xth9feqh",
+												"eu-west-1",
+												"elasticbeanstalk",
+												"com"
+											],
+											"path": [
+												"api",
+												"stocks",
+												"v1",
+												"stock",
+												"watch-lists",
+												"group",
+												"stock",
+												"Jade Club",
+												"ABBV"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Performance List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/performances/windows",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"performances",
+								"windows"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Asset Performance (Time Series)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/performances?symbol=PEP&window=ONE_DAY",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"performances"
+							],
+							"query": [
+								{
+									"key": "symbol",
+									"value": "PEP"
+								},
+								{
+									"key": "window",
+									"value": "ONE_DAY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Owned Stock Position",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/position/413C90928C244E20BB288C4CAAFB598F",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"position",
+								"413C90928C244E20BB288C4CAAFB598F"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stock Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/details/aapl",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"details",
+								"aapl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stock Detail List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/details",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Industry Asset",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/industries/aapl",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"industries",
+								"aapl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Industry Asset List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/industries",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"industries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User Watch List",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/413C90928C244E20BB288C4CAAFB598F/stock/goog",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"watch-lists",
+								"413C90928C244E20BB288C4CAAFB598F",
+								"stock",
+								"goog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Added Watch List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/413C90928C244E20BB288C4CAAFB598F",
+							"protocol": "https",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"watch-lists",
+								"413C90928C244E20BB288C4CAAFB598F"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Watch List from User Wish",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/watch-lists/7",
+							"protocol": "https",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"watch-lists",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Portfolio ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/portfolio/413C90928C244E20BB288C4CAAFB598F",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"portfolio",
+								"413C90928C244E20BB288C4CAAFB598F"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User PortFolio Time Series",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/portfolio/413C90928C244E20BB288C4CAAFB598F/ONE_MONTH",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"portfolio",
+								"413C90928C244E20BB288C4CAAFB598F",
+								"ONE_MONTH"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Investment Aggregates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/position/413C90928C244E20BB288C4CAAFB598F?position=AGGREGATE",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"position",
+								"413C90928C244E20BB288C4CAAFB598F"
+							],
+							"query": [
+								{
+									"key": "position",
+									"value": "AGGREGATE"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transaction Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/assets/transaction/types",
+							"protocol": "https",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"assets",
+								"transaction",
+								"types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Stock Price and Units worth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/assets/aapl?value=6000&type=USE_AMOUNT",
+							"protocol": "https",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"assets",
+								"aapl"
+							],
+							"query": [
+								{
+									"key": "value",
+									"value": "6000"
+								},
+								{
+									"key": "type",
+									"value": "USE_AMOUNT"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top Stock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/stocks/v1/stock/top",
+							"protocol": "http",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"stocks",
+								"v1",
+								"stock",
+								"top"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payments",
+			"item": [
+				{
+					"name": "Get Payment Merchants ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/payment/v1/payment-service/merchant-account-details",
+							"protocol": "https",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"payment",
+								"v1",
+								"payment-service",
+								"merchant-account-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pound Sterling Merchant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/payment/v1/payment-service/merchant-account-details/35cb8b0c-8a1e-4590-b285-f09470badf9d",
+							"protocol": "https",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"payment",
+								"v1",
+								"payment-service",
+								"merchant-account-details",
+								"35cb8b0c-8a1e-4590-b285-f09470badf9d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make Payment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"id\": \"290FD7BC4F264E1EB82431661F1911BE\",\n        \"name\": \"Josiah\",\n        \"email\": \"josleke@gmail.com\",\n        \"phone\": \"+234053266755\"\n    },\n    \"amount\": 300,\n    \"currency\": \"GBP\",\n    \"merchantId\": \"35cb8b0c-8a1e-4590-b285-f09470badf9d\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/payment/v1/payment-service/payment",
+							"protocol": "https",
+							"host": [
+								"holitapigateway-env",
+								"eba-xth9feqh",
+								"eu-west-1",
+								"elasticbeanstalk",
+								"com"
+							],
+							"path": [
+								"api",
+								"payment",
+								"v1",
+								"payment-service",
+								"payment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Webhook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"type\": \"payment_authorized\",\n  \"event_version\": 1,\n  \"event_id\": \"b8d4dda0-ff2c-4d77-a6da-4615e4bad941\",\n  \"payment_id\": \"784b877f-8a42-404a-9add-af351665af59\",\n  \"authorized_at\": \"2021-12-25T15:00:00.000Z\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://getholit.com/payment/webhook",
+							"protocol": "https",
+							"host": [
+								"getholit",
+								"com"
+							],
+							"path": [
+								"payment",
+								"webhook"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Send Email",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"josleke@yahoo.com\",\n    \"phoneNumber\": \"08053266755\"\n}\n"
+				},
+				"url": {
+					"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/user/v1/users/email/verify/send",
+					"protocol": "http",
+					"host": [
+						"holitapigateway-env",
+						"eba-xth9feqh",
+						"eu-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"v1",
+						"users",
+						"email",
+						"verify",
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Josiah\",\n    \"lastName\": \"Adetayo\",\n    \"dob\": \"2020-01-01\",\n    \"address\": \"No. 16 Rainbow, Vancouver, BC\",\n    \"contact\": {\n        \"phoneNumber\":\"+2348140778866\",\n        \"email\":\"josleke@gmail.com\",\n        \"code\":\"123456\"\n    },\n    \"device\": {\n        \"deviceId\": \"5rteyui-009oopqy-try78suid9993\",\n        \"deviceModel\": \"IOS 6s\",\n        \"devicePlatform\": \"IOS\"\n    }\n\n}"
+				},
+				"url": {
+					"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/user/v1/users/email/verify",
+					"protocol": "http",
+					"host": [
+						"holitapigateway-env",
+						"eba-xth9feqh",
+						"eu-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"v1",
+						"users",
+						"email",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/notification/api/v1/notification",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true,
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"channelId\": \"0066DCC9C1CA49018298F8E03B76F277\",\n    \"title\": \"test\",\n    \"body\":\"Hello\",\n    \"recipient\": \"josleke@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/notification/api/v1/notification",
+					"protocol": "http",
+					"host": [
+						"holitapigateway-env",
+						"eba-xth9feqh",
+						"eu-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"notification",
+						"api",
+						"v1",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/user/v1/users/otp/verify/+2348053266755/540331",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/user/v1/users/otp/verify/+2348053266755/144492",
+					"protocol": "http",
+					"host": [
+						"holitapigateway-env",
+						"eba-xth9feqh",
+						"eu-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"v1",
+						"users",
+						"otp",
+						"verify",
+						"+2348053266755",
+						"144492"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/user/v1/users//otp/send/+2348053266755",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/user/v1/users/otp/send/+2348053266755",
+					"protocol": "http",
+					"host": [
+						"holitapigateway-env",
+						"eba-xth9feqh",
+						"eu-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"v1",
+						"users",
+						"otp",
+						"send",
+						"+2348053266755"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"encodedCredentials\": \"NXJ0ZXl1aS0wMDlvb3BxeS10cnk3OHN1aWQ5OTkzOjIwMjItMDUtMDU6MTIzNDU2OlJ0NjUleXVpMDA=\",\n    \"deviceId\": true\n}"
+				},
+				"url": {
+					"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/user/v1/users/login",
+					"protocol": "http",
+					"host": [
+						"holitapigateway-env",
+						"eba-xth9feqh",
+						"eu-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"v1",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/user/v1/users/device/add",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contact\": {\n            \"phoneNumber\": \"08140778866\"\n    },\n    \"device\": {\n            \"deviceId\": \"3a80fefd-544c-4528-b393-8053d223a27c\",\n            \"deviceModel\": \"IOS X Pro Max\",\n            \"devicePlatform\": \"IOS\",\n            \"deviceToken\": \"\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/user/v1/users/device/add",
+					"protocol": "http",
+					"host": [
+						"holitapigateway-env",
+						"eba-xth9feqh",
+						"eu-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"v1",
+						"users",
+						"device",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Profile Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI4ZTczMTc5YS1mNWQ0LTQ3YzQtYmIzNC1jMzEyMDA0ZDFjMjQiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI1SFlIQ0pQNEhSMjBBVk5PMU1RIiwiYXVkIjoiNUhZSENKUDRIUjIwQVZOTzFNUSIsIm5iZiI6MTY2MDY2NTM0NSwic2NvcGUiOlsiU1RPQ0tfU1RBTkRBUkQiXSwiaXNzIjoiaHR0cDpcL1wvMTcyLjMxLjM5Ljk6OTAxMSIsImV4cCI6MTY2MDY2ODk0NSwiaWF0IjoxNjYwNjY1MzQ1LCJwdWJsaWNJZCI6IjJCNDk5NzA3MDZFMjQxOEJBQUEyQjUxQ0I2N0E3OUFFIn0.QfxdBnQhg8nd3_qmpidzylw_Qi1ZQ9KnSDRiLy9g-Q4TWFf21t7wCZHe5cx2qBl-OUlCMD0fqqbw2y76Vk2dShqS75H3ScA9FCsCZimw7d5UXs8JBC7JZq74161QqVfWeMCcwcgsSoNkmEYeJogfU8gHz4SICiNjRTwY5fnlEk-vqSb4aPQ_aeYxwg3ieGR7x5ZaVbhFNqx77XiuOIosKKNmdaxSoykKC5NW0oyGb08SsCv2ZfrPmCMo4TKNOHG0yD2Vr8pqTz4JPDdb5H7bWEXh_7xVYF9SmjEwd37vCNzgA8aA7EgCESgF5lsHYR9kCP6vliA-TkOr3DwMLr8y6Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/user/v1/users/profile",
+					"protocol": "http",
+					"host": [
+						"holitapigateway-env",
+						"eba-xth9feqh",
+						"eu-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"v1",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Profile Account Status",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/user/v1/users/profile/account-status/56B86FB0145649D79126FAA1BA63CBD5",
+					"protocol": "http",
+					"host": [
+						"holitapigateway-env",
+						"eba-xth9feqh",
+						"eu-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"v1",
+						"users",
+						"profile",
+						"account-status",
+						"56B86FB0145649D79126FAA1BA63CBD5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Profile Verification Status",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://holitapigateway-env.eba-xth9feqh.eu-west-1.elasticbeanstalk.com/api/user/v1/users/profile/confirmed/56B86FB0145649D79126FAA1BA63CBD5",
+					"protocol": "http",
+					"host": [
+						"holitapigateway-env",
+						"eba-xth9feqh",
+						"eu-west-1",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"v1",
+						"users",
+						"profile",
+						"confirmed",
+						"56B86FB0145649D79126FAA1BA63CBD5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
